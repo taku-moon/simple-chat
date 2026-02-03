@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: simple-chat
+    cli: false
+
+  ai:
+    model:
+      chat: openai
+
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: hf.co/rippertnt/HyperCLOVAX-SEED-Text-Instruct-1.5B-Q4_K_M-GGUF
+
+    openai:
+      api-key: ${GITHUB_TOKEN}
+      chat:
+        base-url: https://models.github.ai/inference
+        completions-path: /chat/completions
+        options:
+          model: openai/gpt-4.1-nano
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: debug
