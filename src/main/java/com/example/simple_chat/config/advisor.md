@@ -165,8 +165,7 @@ ChatClient 호출 시 ChatMemory를 이용해 대화 내역을 프롬프트에 �
 ```
 @Bean
 public MessageChatMemoryAdvisor messageChatMemoryAdvisor(ChatMemory chatMemory) {
-	return MessageChatMemoryAdvisor.builder(chatMemory)
-		.build();
+	return MessageChatMemoryAdvisor.builder(chatMemory).build();
 }
 ```
 
@@ -212,12 +211,10 @@ public MessageChatMemoryAdvisor messageChatMemoryAdvisor(ChatMemory chatMemory) 
 - **문제 상황**: 동일 ID 공유 시 대화 내용 혼선
 - **해결 방안**:
 
-```java
-  // 사용자별 ID 생성
+```
+// 사용자별 ID 생성
 String conversationId = "user-" + userId + "-" + sessionId;
-  chatService.
-
-stream(conversationId, message);
+chatService.stream(conversationId, message);
 ```
 
 ---
@@ -243,8 +240,7 @@ stream(conversationId, message);
 
 ### 조합 예시
 
-```java
-
+```
 @Configuration
 public class AdvisorConfig {
 
