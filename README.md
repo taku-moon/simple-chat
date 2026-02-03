@@ -210,42 +210,26 @@ Hash 기반 SPA(Single Page Application) 구조로 구현되어 있습니다.
 
 콘솔에서 실시간 스트리밍 출력을 위해 코드 레벨에서 `SimpleLoggerAdvisor`의 콘솔 Appender를 명시적으로 분리(detach)했습니다.
 
-```java
+```
 LoggerContext context = (LoggerContext)LoggerFactory.getILoggerFactory();
-context.
-
-getLogger("ROOT").
-
-detachAppender("CONSOLE");
+context.getLogger("ROOT").detachAppender("CONSOLE");
 ```
 
 **2. Simple Chat**
 
 `SimpleChatService`에서 로거를 제외한 별도의 스트림 전용 `ChatClient`를 생성하여 사용합니다.
 
-```java
+```
 // 기본 클라이언트 (모든 Advisor 포함)
-this.chatClient =chatClientBuilder.
-
-defaultAdvisors(advisors).
-
-build();
+this.chatClient =chatClientBuilder.defaultAdvisors(advisors).build();
 
 // 로거 제외 클라이언트 (스트림용)
 this.chatClientWithoutLogger =chatClientBuilder
-	.
-
-defaultAdvisors(
-	Arrays.stream(advisors)
-            .
-
-filter(advisor ->!(advisor instanceof SimpleLoggerAdvisor))
-	.
-
-toArray(Advisor[]::new)
-    ).
-
-build();
+    .defaultAdvisors(
+	    Arrays.stream(advisors)
+            .filter(advisor ->!(advisor instanceof SimpleLoggerAdvisor))
+	.toArray(Advisor[]::new)
+    ).build();
 ```
 
 이를 통해 스트리밍 호출 시 실시간 출력이 가능하면서도, 일반 호출에서는 로깅 기능을 유지할 수 있습니다.
