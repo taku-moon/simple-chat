@@ -71,9 +71,9 @@ public class SimpleChatController {
 
 	public record PromptBody(
 		@NotEmpty String conversationId,
-		@Nullable String systemPrompt,
 		@NotEmpty String userPrompt,
-		DefaultChatOptions chatOptions
+		@Nullable String systemPrompt,
+		@Nullable DefaultChatOptions chatOptions
 	) {
 	}
 }
