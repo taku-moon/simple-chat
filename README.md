@@ -1,6 +1,10 @@
 # Simple Chat
 
-Spring AI를 활용한 챗봇 애플리케이션 데모 프로젝트입니다.
+<p>Spring AI를 활용한 챗봇 애플리케이션 데모 프로젝트입니다.<p>  
+<img width="3833" height="2058" alt="image" src="https://github.com/user-attachments/assets/e2fa71bf-1cb0-482b-bed0-b663ae1414fb" />
+<img width="3834" height="2058" alt="image" src="https://github.com/user-attachments/assets/c5b31d48-5f34-4d57-a115-8cdd5b887e12" />
+<img width="3831" height="2058" alt="image" src="https://github.com/user-attachments/assets/bf0bda4f-4be3-4771-8339-c481040f10d6" />
+
 
 ## 기술 스택
 
