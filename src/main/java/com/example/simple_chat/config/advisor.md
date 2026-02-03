@@ -94,7 +94,7 @@ public ChatMemory chatMemory() {
 
 #### 개념
 
-```java
+```
 // 예시: "cli"라는 ID로 대화 세션 구분
 simpleChatService.stream("cli",userMessage);
 ```
