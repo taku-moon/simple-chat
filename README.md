@@ -5,7 +5,6 @@
 <img width="3834" height="2058" alt="image" src="https://github.com/user-attachments/assets/c5b31d48-5f34-4d57-a115-8cdd5b887e12" />
 <img width="3831" height="2058" alt="image" src="https://github.com/user-attachments/assets/bf0bda4f-4be3-4771-8339-c481040f10d6" />
 
-
 ## 기술 스택
 
 - Java 21
@@ -237,3 +236,7 @@ this.chatClientWithoutLogger =chatClientBuilder
 ```
 
 이를 통해 스트리밍 호출 시 실시간 출력이 가능하면서도, 일반 호출에서는 로깅 기능을 유지할 수 있습니다.
+
+## 관련 문서
+
+- [advisor.md](src/main/java/com/example/simple_chat/config/advisor.md) — Advisor 상세
